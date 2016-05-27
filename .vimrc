@@ -62,6 +62,8 @@ nnoremap <leader>c :wincmd c<CR>
 "golang
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go set completeopt-=preview
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 "typescript
 if !exists('g:neocomplete#force_omni_input_patterns')
@@ -71,3 +73,6 @@ let g:neocomplete#force_omni_input_patterns.typescript = '[^. *\t]\.\w*\|\h\w*::
 
 "sneak
 " let g:sneak#s_next = 1
+
+"tags
+nnoremap <leader>t <C-]>
