@@ -41,7 +41,6 @@ let g:airline#extensions#tabline#enabled = 1
 " let g:elm_format_autosave = 1
 
 " leader key
-
 let mapleader="\<space>"
 nnoremap <leader><leader> :bnext!<CR>
 nnoremap <C-m> :bnext!<CR>
@@ -51,6 +50,7 @@ nnoremap <leader>d :bd<CR>
 vmap <leader>y "*y
 nmap <leader>p "*p
 nnoremap <leader>c :pc!<CR>
+nnoremap <leader>t <C-]>
 
 "windows
 nnoremap <leader><Up> :wincmd k<CR>
@@ -62,8 +62,8 @@ nnoremap <leader>c :wincmd c<CR>
 "golang
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go set completeopt-=preview
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['go'] }
 
 "typescript
 if !exists('g:neocomplete#force_omni_input_patterns')
